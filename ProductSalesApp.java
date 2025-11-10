@@ -23,7 +23,7 @@ public class ProductSalesApp {
         frame.setSize(420, 360);
         frame.setLayout(new BorderLayout());
 
-        // Menu bar
+        
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
         JMenuItem exitItem = new JMenuItem("Exit");
@@ -46,7 +46,7 @@ public class ProductSalesApp {
         menuBar.add(toolsMenu);
         frame.setJMenuBar(menuBar);
 
-        // Top buttons panel
+        
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new GridLayout(2, 1, 6, 6));
         JButton loadButton = new JButton("Load Product Data");
@@ -58,7 +58,7 @@ public class ProductSalesApp {
         topPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         frame.add(topPanel, BorderLayout.NORTH);
 
-        // Center text area inside a scroll pane
+        
         textArea = new JTextArea();
         textArea.setEditable(false);
         textArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
@@ -66,7 +66,7 @@ public class ProductSalesApp {
         scroller.setPreferredSize(new Dimension(380, 180));
         frame.add(scroller, BorderLayout.CENTER);
 
-        // Bottom: years processed label
+        
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         yearsLabel = new JLabel("Years Processed: 0");
         bottomPanel.add(yearsLabel);
@@ -77,9 +77,6 @@ public class ProductSalesApp {
     }
 
     private void loadProductData() {
-        // Hard-coded data according to the task:
-        // Year 1: Microphone 300, Speakers 150, Mixing Desk 700
-        // Year 2: Microphone 250, Speakers 200, Mixing Desk 600
         int[][] data = {
                 {300, 150, 700},
                 {250, 200, 600}
@@ -96,7 +93,7 @@ public class ProductSalesApp {
             return;
         }
         String text = textArea.getText();
-        // save to data.txt in working directory
+        
         try (FileWriter writer = new FileWriter("data.txt")) {
             writer.write(text);
             writer.flush();
