@@ -11,10 +11,7 @@ public class ProductSales implements IProductSales {
     private int salesUnderLimit;
     private int yearsProcessed;
 
-    /**
-     * Construct with a 2D array of sales and a limit.
-     * The sales array is expected to be rows = years, cols = products per year.
-     */
+
     public ProductSales(int[][] sales, int salesLimit) {
         if (sales == null) throw new IllegalArgumentException("sales data cannot be null");
         this.sales = sales;
@@ -75,17 +72,7 @@ public class ProductSales implements IProductSales {
         return yearsProcessed;
     }
 
-    /** Optional helper to get flattened list of sales values. */
-    public List<Integer> getAllSales() {
-        List<Integer> list = new ArrayList<>();
-        for (int[] row : sales) {
-            if (row == null) continue;
-            for (int v : row) list.add(v);
-        }
-        return list;
-    }
-
-    /** Pretty text summary matching the sample format. */
+   
     public String getSummaryText() {
         StringBuilder sb = new StringBuilder();
         sb.append("DATA LOG\n");
