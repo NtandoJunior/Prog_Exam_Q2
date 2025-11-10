@@ -13,7 +13,6 @@ public class ProductSalesTest {
         ProductSales ps = new ProductSales(data, limit);
 
         assertEquals(2200, ps.getTotalSales(), "Total sales should be 2200");
-        // average is 2200 / 6 = 366.666..., allow small delta
         assertEquals(2200.0 / 6.0, ps.getAverageSales(), 0.0001, "Average must match exact double value");
         assertEquals(2, ps.getSalesOverLimit(), "Sales over limit (>500) should be 2 (700 & 600)");
         assertEquals(4, ps.getSalesUnderLimit(), "Sales under or equal to limit should be 4");
